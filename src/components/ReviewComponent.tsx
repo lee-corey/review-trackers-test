@@ -1,7 +1,7 @@
 import { Flex, Box, Text, HStack } from "@chakra-ui/react";
 
 import Rating from "./Rating";
-import ReviewType from "../types/review";
+import { Review as ReviewType } from "../types";
 import { formatDate } from "../utils/time";
 
 type ReviewComponentType = {
@@ -11,10 +11,8 @@ type ReviewComponentType = {
 export default function ReviewComponent({ review }: ReviewComponentType) {
   return (
     <Flex
-      h="250px"
-      flexBasis="25.1%"
+      h="100%"
       bg="white"
-      mb="20"
       p="5"
       textAlign="left"
       boxShadow="0px 2px 5px 1px #aaa"
