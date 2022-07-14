@@ -28,9 +28,17 @@ function responseReducer(state: State, action: Action) {
         response: new Map(response),
       };
     }
-    default: {
-      throw new Error(`Unhandled action type: ${action.type}`);
+    case "edit": {
+      const { reviewId } = action.data;
+      const response = state.response;
+      response.set(reviewId, action.data);
+      return {
+        response: new Map(response),
+      };
     }
+    // default: {
+    //   throw new Error(`Unhandled action type: ${action.type}`);
+    // }
   }
 }
 

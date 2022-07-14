@@ -1,4 +1,5 @@
-import { Flex, Box, Text, HStack } from "@chakra-ui/react";
+import { Flex, Box, Text, HStack, Icon } from "@chakra-ui/react";
+import { FaCopy } from "react-icons/fa";
 
 import Rating from "./Rating";
 import { Review as ReviewType } from "../types";
@@ -6,9 +7,13 @@ import { formatDate } from "../utils/time";
 
 type ReviewComponentType = {
   review: ReviewType;
+  hasReview: boolean;
 };
 
-export default function ReviewComponent({ review }: ReviewComponentType) {
+export default function ReviewComponent({
+  review,
+  hasReview,
+}: ReviewComponentType) {
   return (
     <Flex
       h="100%"
@@ -32,14 +37,17 @@ export default function ReviewComponent({ review }: ReviewComponentType) {
           {review.content}
         </Text>
       </Box>
-      <HStack>
-        <Text fontSize={12} mr={5}>
-          {review.author}
-        </Text>
-        <Text fontSize={12} color="gray.400">
-          {formatDate(review.published_at)}
-        </Text>
-      </HStack>
+      <Flex justifyContent="space-between">
+        <HStack>
+          <Text fontSize={12} mr={5}>
+            {review.author}
+          </Text>
+          <Text fontSize={12} color="gray.400">
+            {formatDate(review.published_at)}
+          </Text>
+        </HStack>
+        {hasReview && <Icon as={FaCopy} color="#2a7ae6" />}
+      </Flex>
     </Flex>
   );
 }
