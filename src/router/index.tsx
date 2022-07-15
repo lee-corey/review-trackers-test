@@ -9,10 +9,16 @@ import ReviewScreen from "../screens/ReviewScreen";
 export default function Router() {
   return (
     <BrowserRouter>
-      <Box h="100vh" textAlign="center" fontSize="xl" bg="gray.200">
+      <Box h="100%" minH="100vh" textAlign="center" fontSize="xl" bg="gray.200">
         <Flex direction="column">
           <ReviewsHeader />
-          <Box flex="1" h="100%" pl="40" pr="40" pt="35">
+          <Box
+            flex="1"
+            h="100%"
+            pl={{ base: "5", xl: "40" }}
+            pr={{ base: "5", xl: "40" }}
+            pt="35"
+          >
             <Routes>
               <Route path="/" element={<Navigate replace to="/reviews" />} />
               <Route path="/reviews" element={<ReviewScreen />} />

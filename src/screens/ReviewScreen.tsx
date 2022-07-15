@@ -12,7 +12,12 @@ export default function ReviewScreen() {
   return (
     <Flex h="100%" flexWrap="wrap" justifyContent="space-between">
       {reviews.map((review) => (
-        <Box h="250px" flexBasis="25.1%" key={review.id} mb="20">
+        <Box
+          h="250px"
+          flexBasis={{ base: "100%", xl: "25.1%" }}
+          key={review.id}
+          mb="20"
+        >
           <Link to={`/reviews/${review.id}`}>
             <ReviewComponent
               review={review}
