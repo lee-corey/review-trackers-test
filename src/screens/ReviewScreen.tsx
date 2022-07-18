@@ -10,7 +10,12 @@ export default function ReviewScreen() {
     state: { response },
   } = useResponse();
   return (
-    <Flex h="100%" flexWrap="wrap" justifyContent="space-between">
+    <Flex
+      h="100%"
+      flexWrap="wrap"
+      justifyContent="space-between"
+      id="review-screen"
+    >
       {reviews.map((review) => (
         <Box
           h="250px"

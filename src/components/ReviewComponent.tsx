@@ -46,7 +46,7 @@ export default function ReviewComponent({
             {formatDate(review.published_at)}
           </Text>
         </HStack>
-        {hasReview && <Icon as={FaCopy} color="#2a7ae6" />}
+        {hasReview && <Icon as={FaCopy} id="hasReview" color="#2a7ae6" />}
       </Flex>
     </Flex>
   );

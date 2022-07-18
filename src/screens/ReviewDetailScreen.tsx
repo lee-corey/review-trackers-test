@@ -74,7 +74,7 @@ export default function ReviewDetailScreen() {
             <Flex justifyContent="space-between">
               <Flex alignItems="center">
                 <Icon as={FaReply} color="#2a7ae6" position="absolute" />
-                <Text ml={16} color="gray.500">
+                <Text ml={16} color="gray.500" id="reviewContent">
                   {responseData.content}
                 </Text>
               </Flex>
@@ -114,7 +114,7 @@ export default function ReviewDetailScreen() {
                 required
               />
               <FormErrorMessage>{"error"}</FormErrorMessage>
-              <Button mt={4} colorScheme="teal" type="submit">
+              <Button mt={4} colorScheme="teal" type="submit" id="submit">
                 Submit
               </Button>
             </FormControl>
